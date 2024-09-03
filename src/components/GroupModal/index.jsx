@@ -1,6 +1,11 @@
 import { useRef } from "react";
 
-export default function GroupModal({ lists, setLists, setIsClickAddGp }) {
+export default function GroupModal({
+    lists,
+    setLists,
+    setInputData,
+    setIsClickAddGp,
+}) {
     const inputRef = useRef();
 
     const handleCloseBtn = () => {
@@ -42,6 +47,7 @@ export default function GroupModal({ lists, setLists, setIsClickAddGp }) {
         const newList = lists.filter((_, i) => i !== index);
         localStorage.setItem("groups", JSON.stringify(newList));
         setLists(newList);
+        setInputData((prev) => ({ ...prev, group: "" }));
     };
 
     return (

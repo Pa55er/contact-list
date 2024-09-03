@@ -1,4 +1,4 @@
-export default function InputEl({ label, id, setInputData }) {
+export default function InputEl({ label, id, inputData, setInputData }) {
     const handleKeyUp = (e) => {
         setInputData((prev) => ({
             ...prev,
@@ -13,7 +13,8 @@ export default function InputEl({ label, id, setInputData }) {
                 type="text"
                 id={id}
                 placeholder={label}
-                onKeyUp={handleKeyUp}
+                value={inputData[`${id}`]}
+                onChange={handleKeyUp}
             />
         </div>
     );

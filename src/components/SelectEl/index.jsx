@@ -3,6 +3,7 @@ export default function SelectEl({
     id,
     lists,
     setIsClickAddGp,
+    inputData,
     setInputData,
 }) {
     const handleAddGp = () => {
@@ -20,7 +21,11 @@ export default function SelectEl({
         <div className="SelectEl">
             <label htmlFor={id}>{label}</label>
             <div>
-                <select id={id} onChange={handleSelected}>
+                <select
+                    id={id}
+                    onChange={handleSelected}
+                    value={inputData[`${id}`]}
+                >
                     <option value="">--선택--</option>
                     {lists.map((list, index) => (
                         <option key={index} value={list}>

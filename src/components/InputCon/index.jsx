@@ -35,15 +35,27 @@ export default function InputCon({ contactLists, setContactLists }) {
         const newContactLists = [inputData, ...contactLists];
         localStorage.setItem("contactList", JSON.stringify(newContactLists));
         setContactLists(newContactLists);
+        setInputData({
+            name: "",
+            tel: "",
+            group: "",
+            memo: "",
+        });
     };
 
     return (
         <>
             <section className="InputCon">
-                <InputEl label="이름" id="name" setInputData={setInputData} />
+                <InputEl
+                    label="이름"
+                    id="name"
+                    inputData={inputData}
+                    setInputData={setInputData}
+                />
                 <InputEl
                     label="전화번호"
                     id="tel"
+                    inputData={inputData}
                     setInputData={setInputData}
                 />
                 <SelectEl
@@ -51,11 +63,13 @@ export default function InputCon({ contactLists, setContactLists }) {
                     id="group"
                     lists={lists}
                     setIsClickAddGp={setIsClickAddGp}
+                    inputData={inputData}
                     setInputData={setInputData}
                 />
                 <InputEl
                     label="간단한 기록"
                     id="memo"
+                    inputData={inputData}
                     setInputData={setInputData}
                 />
                 <button onClick={handleAddList}>저장</button>
@@ -64,6 +78,7 @@ export default function InputCon({ contactLists, setContactLists }) {
                 <GroupModal
                     lists={lists}
                     setLists={setLists}
+                    setInputData={setInputData}
                     setIsClickAddGp={setIsClickAddGp}
                 />
             ) : null}
