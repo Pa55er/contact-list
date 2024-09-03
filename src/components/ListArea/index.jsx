@@ -5,22 +5,36 @@ import { useState } from "react";
 
 export default function ListArea({ contactLists, setContactLists }) {
     const [targetList, setTargetList] = useState(null);
+    const [searchWord, setSearchWord] = useState("");
+    const checkSearch = (list) => {
+        if (searchWord === "") return true;
+        if (list.name.includes(searchWord)) return true;
+        if (list.tel.includes(searchWord)) return true;
+        if (list.group.includes(searchWord)) return true;
+        return false;
+    };
+
+    const indexedLists = contactLists.map((list, index) => ({
+        ...list,
+        index,
+    }));
 
     return (
         <>
             <section className="ListArea">
-                <SearchCon />
+                <SearchCon setSearchWord={setSearchWord} />
                 <ul>
-                    {contactLists.map((list, index) => (
-                        <List
-                            key={index}
-                            list={list}
-                            index={index}
-                            setTargetList={setTargetList}
-                            contactLists={contactLists}
-                            setContactLists={setContactLists}
-                        />
-                    ))}
+                    {indexedLists
+                        .filter((list) => checkSearch(list))
+                        .map((list, index) => (
+                            <List
+                                key={index}
+                                list={list}
+                                setTargetList={setTargetList}
+                                contactLists={contactLists}
+                                setContactLists={setContactLists}
+                            />
+                        ))}
                 </ul>
             </section>
             {targetList !== null && (

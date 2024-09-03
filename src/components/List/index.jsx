@@ -1,18 +1,17 @@
 export default function List({
     list,
-    index,
     setTargetList,
     contactLists,
     setContactLists,
 }) {
     const handleDeleteList = () => {
-        const newContactLists = contactLists.filter((_, i) => i !== index);
+        const newContactLists = contactLists.filter((_, i) => i !== list.index);
         localStorage.setItem("contactList", JSON.stringify(newContactLists));
         setContactLists(newContactLists);
     };
 
     const handleShowDetail = () => {
-        setTargetList(index);
+        setTargetList(list.index);
     };
 
     return (
