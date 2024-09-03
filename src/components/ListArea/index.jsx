@@ -1,21 +1,34 @@
 import SearchCon from "../SearchCon";
 import List from "../List";
 import DetailModal from "../DetailModal";
+import { useState } from "react";
 
-export default function ListArea() {
+export default function ListArea({ contactLists, setContactLists }) {
+    const [targetList, setTargetList] = useState(null);
+
     return (
         <>
             <section className="ListArea">
                 <SearchCon />
                 <ul>
-                    <List />
-                    <List />
-                    <List />
-                    <List />
-                    <List />
+                    {contactLists.map((list, index) => (
+                        <List
+                            key={index}
+                            list={list}
+                            index={index}
+                            setTargetList={setTargetList}
+                            contactLists={contactLists}
+                            setContactLists={setContactLists}
+                        />
+                    ))}
                 </ul>
             </section>
-            {/* <DetailModal /> */}
+            {targetList !== null && (
+                <DetailModal
+                    data={contactLists[targetList]}
+                    setTargetList={setTargetList}
+                />
+            )}
         </>
     );
 }

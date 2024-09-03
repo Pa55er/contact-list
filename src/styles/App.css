@@ -60,16 +60,21 @@
 }
 .SelectEl > div {
     flex: 7;
-    display: inline-flex;
+    display: flex;
     gap: 1rem;
 }
 .SelectEl > div > select {
-    flex: 1;
+    width: 50%;
     border: 2px solid #464646;
     padding: 0.5rem;
 }
+.SelectEl > div > select > option {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .SelectEl > div > button {
-    flex: 1;
+    width: 50%;
     border: 2px solid #464646;
 }
 
