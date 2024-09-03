@@ -1,0 +1,237 @@
+.App {
+    /* border: 1px solid red; */
+    max-width: 1000px;
+    width: 80%;
+    margin: 100px auto;
+}
+.App > h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 5rem 0;
+}
+.App > article {
+    display: flex;
+    gap: 2rem;
+}
+
+.InputCon {
+    border: 2px solid #c1c1c1;
+    border-radius: 1rem;
+    flex: 4.5;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    height: 100%;
+}
+.InputCon > button {
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    background-color: rgb(0, 92, 191);
+    padding: 1rem 0;
+    color: white;
+}
+
+.InputEl {
+    display: flex;
+    justify-content: space-between;
+}
+.InputEl > label {
+    flex: 3;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+.InputEl > input {
+    flex: 7;
+    border: 2px solid #464646;
+    padding: 0.5rem;
+}
+
+.SelectEl {
+    display: flex;
+    justify-content: space-between;
+}
+.SelectEl > label {
+    flex: 3;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+.SelectEl > div {
+    flex: 7;
+    display: inline-flex;
+    gap: 1rem;
+}
+.SelectEl > div > select {
+    flex: 1;
+    border: 2px solid #464646;
+    padding: 0.5rem;
+}
+.SelectEl > div > button {
+    flex: 1;
+    border: 2px solid #464646;
+}
+
+.ListArea {
+    /* border: 3px solid green; */
+    flex: 5.5;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.SearchCon {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem;
+}
+.SearchCon > input {
+    flex: 7;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: rgb(226, 248, 255);
+}
+.SearchCon > button {
+    flex: 3;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    background-color: rgb(0, 92, 191);
+    padding: 1rem 0;
+    color: white;
+}
+
+.List {
+    padding: 1rem;
+    border-bottom: 1.5px solid #989898;
+    display: flex;
+    gap: 1rem;
+}
+.List > span {
+    flex: 1;
+    /* border: 1px solid purple; */
+    padding: 0.5rem;
+}
+.List > div > button {
+    padding: 0.5rem;
+    border: 1.5px solid #464646;
+}
+
+.modalWrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+.GroupModal {
+    background-color: white;
+    /* border: 1px solid red; */
+    max-width: 500px;
+    width: 50%;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.GroupModal > h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+.GroupModal > ul {
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.GroupModal > ul > li {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+.GroupModal > ul > li > span {
+    flex: 1;
+}
+.GroupModal > ul > li > button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+.GroupModal > div {
+    display: flex;
+}
+.GroupModal > div > input {
+    flex: 1;
+    padding: 1rem;
+    border: 1.5px solid #464646;
+}
+.GroupModal > div > button {
+    padding: 1rem;
+    border: 1.5px solid #464646;
+}
+.GroupModal > button {
+    position: absolute;
+    background-color: red;
+    color: white;
+    border: none;
+    outline: none;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.DetailModal {
+    background-color: white;
+    max-width: 500px;
+    width: 50%;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.DetailModal > h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+.DetailModal > div {
+    display: flex;
+    gap: 1rem;
+}
+.DetailModal > div > span {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.DetailModal > div > p {
+    font-size: 1.2rem;
+}
+.DetailModal > button {
+    position: absolute;
+    background-color: red;
+    color: white;
+    border: none;
+    outline: none;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
